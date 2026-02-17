@@ -1,14 +1,14 @@
-    # Project Clusters Web
-    ---
+ # Project Clusters Web
+---
 
-    ## Stack:
+## Stack:
 
-    - Next.js
-    - Chakra UI
-    - Redux Toolkit
-    - React Hook Form
+- Next.js
+- Chakra UI
+- Redux Toolkit
+- React Hook Form
 
-    ---
+---
 
-    ## Changelog (v0.0.0)
-    - initial commit
+## Changelog (v0.0.0)
+- initial commit
