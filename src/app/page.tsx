@@ -1,66 +1,35 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import { Box, Flex, Heading } from '@chakra-ui/react';
+import { ChatListener } from '../components/ChatListener';
+import { MessageList } from '../components/MessageList';
+import { MessageForm } from '../components/MessageForm';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <Flex direction="column" height="100vh">
+      {/* Listener */}
+      <ChatListener />
+
+      {/* Header */}
+      <Box p={4} borderBottom="1px solid #eee">
+        <Heading size="md">Clusters</Heading>
+      </Box>
+
+      {/* Message List (Scrollable Area) */}
+      <Box flex="1" overflowY="auto" p={4}>
+        <MessageList />
+      </Box>
+
+      {/* Sticky Bottom Form */}
+      <Box
+        p={4}
+        borderTop="1px solid #eee"
+        position="sticky"
+        bottom="0"
+        bg="white"
+      >
+        <MessageForm />
+      </Box>
+    </Flex>
   );
 }
